@@ -1,0 +1,20 @@
+{
+  "name": "final_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tests": "npx mocha api-tests --timeout=10000",
+    "cy:open": "npx cypress open",
+    "cy:chrome": "npx cypress run --browser chrome",
+    "cy:chrome:headed": "npx cypress run --browser chrome --headed"
+  },
+  "author": "Ionut",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
+    "cypress": "^13.5.0",
+    "mocha": "^10.2.0",
+    "pactum": "^3.5.1"
+  }
+}
