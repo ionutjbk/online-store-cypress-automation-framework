@@ -1,14 +1,15 @@
-const { faker } = require("@faker-js/faker");
 
-describe("Registration test suite", () => {
-  beforeEach(() => {
-    cy.visit("https://automationteststore.com/");
-    // cy.fixture('login').then((data) => {
-    //     this.data = data
-    // })
+const { faker } = require("@faker-js/faker");
+const { default: NavBar } = require("../pages/NavBarPage");
+
+describe("Registration test suite", function() {
+  beforeEach(function()  {
+    cy.visit("https://automationteststore.com/")
   });
 
-  it("Try to register user with valid credentials", () => {
+  let password = faker.internet.password({ length: 20 })
+
+  it("Try to register user with valid credentials", function() {
     cy.get("a").contains(/Login or register/i).click();
     cy.get("#accountFrm_accountregister").should("be.checked");
     cy.get('button[title="Continue"]').click();
@@ -20,8 +21,8 @@ describe("Registration test suite", () => {
     cy.get("#AccountFrm_zone_id[name='zone_id']").select(faker.number.int(20));
     cy.get("#AccountFrm_postcode").type(faker.number.int({ min: 100, max: 10000 }),{ delay: 0 });
     cy.get("#AccountFrm_loginname").type(faker.lorem.word({ length: { min: 5, max: 15 }, strategy: 'fail' })); 
-    cy.get("#AccountFrm_password").type('strongPassword21@!' , { delay: 0 });
-    cy.get("#AccountFrm_confirm").type('strongPassword21@!', { delay: 0 });
+    cy.get("#AccountFrm_password").type(password)
+    cy.get("#AccountFrm_confirm").type(password);
     cy.get("#AccountFrm_agree").check();
     cy.get("button[title='Continue']").contains("Continue").click();
     cy.get(".maintext").contains(' Your Account Has Been Created!').should('be.visible')
