@@ -1,6 +1,4 @@
-
 const { faker } = require("@faker-js/faker");
-const { default: NavBar } = require("../pages/NavBarPage");
 
 describe("Registration test suite", function() {
   beforeEach(function()  {

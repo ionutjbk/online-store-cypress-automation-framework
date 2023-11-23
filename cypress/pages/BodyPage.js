@@ -1,15 +1,27 @@
-class Body {
+class BodyPage {
     getFirstItemBtn() {
-        cy.get("#block_frame_featured_1769 > div > div:nth-child(1) > div.thumbnail > div.pricetag.jumbotron > a")
+        return cy.get("#block_frame_featured_1769 > div > div:nth-child(1) > div.thumbnail > div.pricetag.jumbotron > a")
     }
 
     getCheckoutBtn() {
-        cy.get("#cart_checkout1")
+        return cy.get("#cart_checkout1")
     }
 
     getConfirmOrderBtn() {
-        cy.get("#checkout_btn")
+        return cy.get("#checkout_btn")
+    }
+
+    setLoginUsername() {
+        return cy.get("#loginFrm_loginname")
+    }
+
+    setLoginPassword() {
+        return cy.get("#loginFrm_password")
+    }
+
+    getLoginBtn() {
+        return cy.get('button[title="Login"]').contains('Login')
     }
 }
 
-export default new Body();
+export default new BodyPage();

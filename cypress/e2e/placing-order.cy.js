@@ -1,9 +1,5 @@
-import Header from "../pages/Header";
-import BodyPage from "../pages/BodyPage";
-import NavBar from "../pages/NavBarPage";
-
 describe("Placing orders test suite", () => {
-  before(function () {
+  beforeEach(function () {
     cy.fixture("login-info").then((data) => {
       this.data = data
     })
