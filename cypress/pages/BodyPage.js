@@ -10,18 +10,6 @@ class BodyPage {
     getConfirmOrderBtn() {
         return cy.get("#checkout_btn")
     }
-
-    setLoginUsername() {
-        return cy.get("#loginFrm_loginname")
-    }
-
-    setLoginPassword() {
-        return cy.get("#loginFrm_password")
-    }
-
-    getLoginBtn() {
-        return cy.get('button[title="Login"]').contains('Login')
-    }
 }
 
 export default new BodyPage();

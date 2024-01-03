@@ -1,5 +1,5 @@
 describe("Edit info test suite", () => {
-  before(() => {
+  beforeEach(() => {
     cy.fixture("login-info").then((data) => {
       cy.login(data.username, data.password);
     });
